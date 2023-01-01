@@ -7,6 +7,8 @@ import{HttpClientModule} from '@angular/common/http'
 import { NewsapiservicesService } from './services/newsapiservices.service';
 import { TopheadingComponent } from './topheading/topheading.component';
 import { TechnewsComponent } from './technews/technews.component';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+
 import { BusinessnewsComponent } from './businessnews/businessnews.component';
 // import { SearchPipePipe } from './search-pipe.pipe';
 import { SearchPipe } from './search.pipe';
@@ -23,7 +25,8 @@ import { SearchPipe } from './search.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LoadingBarHttpClientModule
    
   ],
   providers: [ NewsapiservicesService],
