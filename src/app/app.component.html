@@ -22,9 +22,9 @@
         
     
   </div>
-  <ng-container  *ngIf="searchList.length==0">
+  <!-- <ng-container  *ngIf="searchList.length==0">
     <app-topheading *ngIf="searchList.length==0 " ></app-topheading>
-  </ng-container>
+  </ng-container> -->
   <!-- <div class="row" >
     <div *ngFor="let headline of searchList |search:filterText" class="col-lg-3 mb-3">
         <div class="box">
@@ -35,9 +35,9 @@
         </div>
     </div>
 </div> -->
-  <ng-template #notFound>
+  <!-- <ng-template #notFound>
     <div class="p-2 m-2 border-2 border-blue-200 text-blue-500">No search results</div>
-  </ng-template>
+  </ng-template> -->
 <router-outlet></router-outlet>
 
 <footer class="mt-3">
