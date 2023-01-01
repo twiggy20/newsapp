@@ -1,0 +1,13 @@
+<div class="container-fluid mt-5">
+    <h4>News Category</h4>
+    <div class="row">
+        <div *ngFor="let category of categoryDisplay" class="col-lg-3 mb-3">
+            <div class="box">
+                <img src="{{category.urlToImage}} " width="100%">
+                <h5 class="mt-2 mb-2">{{category.title}}</h5>
+                <button class="btn btn-dark btn-sm mx-2" (click)="save()" >Read later</button>
+                <!-- <a href="headline.url" class="btn btn-primary btn-sm mx-4" target="_blank"> Read more</a> -->
+            </div>
+        </div>
+    </div>
+</div>
