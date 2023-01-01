@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsapiservicesService } from '../services/newsapiservices.service';
 @Component({
-  selector: 'app-technews',
-  templateUrl: './technews.component.html',
-  styleUrls: ['./technews.component.css']
+  selector: 'app-businessnews',
+  templateUrl: './businessnews.component.html',
+  styleUrls: ['./businessnews.component.css']
 })
-export class TechnewsComponent implements OnInit {
-  techDisplay:any=[]
+export class BusinessnewsComponent implements OnInit {
+  businessDisplay:any=[]
   titles:any=[]
   links:any=[]
+  
   constructor(private service:NewsapiservicesService) { }
 
   ngOnInit(): void {
-    this.service.technews().subscribe((result)=>{
+    this.service.businessnews().subscribe((result)=>{
       console.log(result);
-      this.techDisplay=result.articles;
+      this.businessDisplay=result.articles;
     })
+   
   }
   save(description:any,link:any){
     this.links.push(link)
@@ -24,4 +26,5 @@ export class TechnewsComponent implements OnInit {
     localStorage.setItem('links',JSON.stringify(this.links))
   // console.log('storage is',this.s)
   }
+
 }

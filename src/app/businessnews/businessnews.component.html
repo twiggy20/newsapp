@@ -1,15 +1,13 @@
 <div class="container-fluid mt-5">
-    <h4>Tech News</h4>
+    <h4>Business News</h4>
     <div class="row">
-        <div *ngFor="let headline of techDisplay" class="col-lg-3 mb-3">
+        <div *ngFor="let headline of businessDisplay" class="col-lg-3 mb-3">
             <div class="box">
                 <img src="{{headline.urlToImage}} " width="100%">
                 <h5 class="mt-2 mb-2">{{headline.title}}</h5>
-                <button class="btn btn-dark btn-sm mx-2" (click)="save(headline.description, headline.url)" >Read later</button>
+                <button class="btn btn-dark btn-sm mx-2" (click)="save(headline.description, headline.url)">Read later</button>
                 <!-- <a href="headline.url" class="btn btn-primary btn-sm mx-4" target="_blank"> Read more</a> -->
             </div>
-            
-
         </div>
     </div>
 </div>
