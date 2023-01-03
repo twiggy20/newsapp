@@ -6,13 +6,14 @@ import { NewsapiservicesService } from '../services/newsapiservices.service';
   styleUrls: ['./topheading.component.css']
 })
 export class TopheadingComponent implements OnInit {
+  url:string='top-headlines?country=in'
   headlinesDisplay:any=[]
   titles:any=[]
   links:any=[]
   constructor(private service:NewsapiservicesService) { }
 
   ngOnInit(): void {
-    this.service.topheadlines().subscribe((result)=>{
+    this.service.getNews(this.url).subscribe((result)=>{
       console.log(result);
       this.headlinesDisplay=result.articles;
       // for (let index = 0; index <this.headlinesDisplay.length; index++) {

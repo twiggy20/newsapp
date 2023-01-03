@@ -6,14 +6,16 @@ import { NewsapiservicesService } from '../services/newsapiservices.service';
   styleUrls: ['./businessnews.component.css']
 })
 export class BusinessnewsComponent implements OnInit {
+  url:string='top-headlines?category=business'
   businessDisplay:any=[]
   titles:any=[]
   links:any=[]
+  // filterText:string=''
   
   constructor(private service:NewsapiservicesService) { }
 
   ngOnInit(): void {
-    this.service.businessnews().subscribe((result)=>{
+    this.service.getNews(this.url).subscribe((result)=>{
       console.log(result);
       this.businessDisplay=result.articles;
     })

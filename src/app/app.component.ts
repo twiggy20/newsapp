@@ -9,27 +9,25 @@ import { NewsapiservicesService } from './services/newsapiservices.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'newsApp';
   titles:any=[]
   links:any=[]
-  searchForm:FormGroup=new FormGroup({search:new FormControl('')})
+  // searchForm:FormGroup=new FormGroup({search:new FormControl('')})
   public searchList:Array<any>=[]
-  filterText: string='';
-// filterText: string;
+  filterText!: string;
 
-    constructor(private service:NewsapiservicesService){
-      this.searchForm.get('search')?.valueChanges.pipe
-      (
-        // debounceTime(1000),
-        // distinctUntilChanged(),
-         switchMap((v)=>this.service.getNews(v)),
-      ).subscribe((v)=>{
-        this.searchList=v.articles
-        console.log('search list result', this.searchList)
 
-      })
+    constructor(private service:NewsapiservicesService){}
+
+    getCategory(){
+      if ( this.filterText!='') {
+        this.service.search(this.filterText).subscribe((result)=>{
+          console.log('search is',result);
+          this.searchList=result.articles;
+        })
+      }
+      
+      
     }
-
     save(description:any,link:any){
       this.links.push(link)
       this.titles.push(description)
